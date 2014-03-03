@@ -1,14 +1,5 @@
-##################################################################################
-#										                                                             #
-#	        compareCPB.py	  		              created by Philipp Deutsch		       #
-#										                                                             #
-#					philipp.g.deutsch@gmail.com                                            #
-#					January 22nd, 2014                                                     #	
-#										                                                             #
-##################################################################################
-
 #	Usage:
-#	Compares the files with given extension in two foders
+#	Compares the files with given extension in two folders
 #	python compareCPB.py <extension> <folder1> <folder2> <outputFile>
 
 import csv
@@ -63,7 +54,6 @@ with open(outFileName, 'w') as outFile:
         fileCounter = 0
         for fileName in filesToCompare:
 #		print fileName
-#		try:
 		fileCounter = fileCounter + 1
 		if fileCounter % 100 == 0:
 			sys.stdout.write('|')
@@ -103,9 +93,6 @@ with open(outFileName, 'w') as outFile:
 						writeList = [fileName, data1[i][0], str(col+1), str(val1), str(val2),'\n']
 						outFile.write(','.join(writeList))
 #						print(val1, val2, check, val1==val2) 
-#		except Exception, e:
-#			print(str(e))
-#			filesError.append(fileName)
 if len(filesError) > 0:
 	print('Errors comparing the following files:')
 	print(filesError)
